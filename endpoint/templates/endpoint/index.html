@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<style type="text/css">
+	.center {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 50%;
+		padding-top: 30px;
+	}
+</style>
+{% endblock extra_css %}
+
+{% block content %}
+<br>
+<div class="container-fluid">
+	<input type="hidden" id="Url" data-url="{% url 'endpoint:post_persona' %}" />
+	<form id="persona-form" role="form">
+		{% csrf_token %}
+		{{ form.as_table }}<br>
+		<input type="submit" class="btn btn-info" value="Registrar"/>
+	<form>
+</div>
+<br/>
+
+<div class="container-fluid">
+	<table class="table table-striped " id="personas">
+		<thead>
+			<tr>
+			<th scope="col">#</th>
+			<th scope="col">Nombre</th>
+			<th scope="col">Email</th>
+			<th scope="col">Kms</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for item in personas %}
+				<tr>
+					<th scope="row">{{ item.id }}</th>
+					<td>{{ item.nombre }}</td>
+					<td>{{ item.email }}</td>
+					<td>{{ item.kms }}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% endblock content %}
+
+{% block extra_js %}
+<script src="{% static 'endpoint/js/endpoint.js' %}"></script></body>
+{% endblock extra_js %}

@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+	<meta name="generator" content="Jekyll v4.1.1">
+
+	{% block title %}<title>Hackademy - Django</title>{% endblock %}
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    
+	<!-- Favicons -->
+	<meta name="theme-color" content="#563d7c">
+
+	<!-- Custom CSS for this template -->
+	<link rel="stylesheet" href="{% static 'endpoint/css/dashboard.css' %}">
+
+	{% block extra_css %}{% endblock extra_css %}
+
+</head>
+<body>
+	<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+		<a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Hackademy</a>
+		<button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+		<ul class="navbar-nav px-3">
+			<li class="nav-item text-nowrap">
+				<a class="nav-link" href="#">Sign out</a>
+			</li>
+		</ul>
+	</nav>
+
+<div class="container-fluid">
+	<div class="row">
+		<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+			<div class="sidebar-sticky pt-3">
+				<img src="{% static 'endpoint/img/logo.svg' %}" alt="Logo" class="center" width="20%">
+			</div>
+		</nav>
+
+	<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+		{% block content %}{% endblock content %}
+	</main>
+
+	</div>
+</div>
+
+	<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"> </script>
+    <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"> </script>
+    
+	<!-- Custom JS for this template -->
+	<script src="{% static 'endpoint/js/dashboard.js' %}"></script></body>
+
+	{% block extra_js %}{% endblock extra_js %}
+
+</html>
